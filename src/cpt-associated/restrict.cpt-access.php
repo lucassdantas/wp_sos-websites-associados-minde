@@ -2,8 +2,8 @@
 
 defined('ABSPATH') or die();
 
-function csc_restringir_acesso_cpt_associados($query) {
-  if (!is_admin() && $query->is_main_query() && is_singular('posts_associados')) {
+function csc_restringir_acesso_cpt_associados() {
+  if (!is_admin() && is_singular('posts_associados')) {
       if (!current_user_can('administrator') && 
           !current_user_can('editor') && 
           !current_user_can('author') && 

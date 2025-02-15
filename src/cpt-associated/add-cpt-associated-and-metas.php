@@ -22,18 +22,20 @@ function csc_register_cpt_associados() {
 
     $args = [
         'labels'             => $labels,
-        'public'             => false, // Impede acesso público direto
+        'public'             => true, // Impede acesso público direto
         'publicly_queryable' => true, // Permite que usuários logados consultem
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
         'rewrite'            => ['slug' => 'posts-associados'],
         'capability_type'    => 'post',
-        'has_archive'        => false,
-        'hierarchical'       => false,
+        'has_archive'        => true,
+        'hierarchical'       => true,
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-groups', // Ícone no menu do WP
         'supports'           => ['title', 'editor', 'author', 'thumbnail', 'excerpt'],
+        'exclude_from_search' => true,
+        'show_in_nav_menus' => false,
     ];
 
     register_post_type('posts_associados', $args);
