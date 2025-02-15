@@ -10,6 +10,17 @@ Version: 1.0.0
 defined('ABSPATH') or die('You do not have permission to access this file.');
 
 require_once plugin_dir_path(__FILE__) . 'src/custom-role-associados/add-associados-role.php';
+
+register_activation_hook(__FILE__, 'csc_on_plugin_activation');
+function csc_on_plugin_activation() {
+    csc_add_user_role_associado();
+}
+register_deactivation_hook(__FILE__, 'csc_on_plugin_deactivation');
+function csc_on_plugin_deactivation() {
+  csc_remove_user_role_associado();
+}
+
+
 require_once plugin_dir_path(__FILE__) . 'src/custom-role-associados/redirect-to-associados.php';
 require_once plugin_dir_path(__FILE__) . 'src/custom-role-associados/custom-fields-for-associados.php';
 require_once plugin_dir_path(__FILE__) . 'src/custom-role-associados/shortcode-associado-data.php';

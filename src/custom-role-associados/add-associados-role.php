@@ -8,7 +8,7 @@ function csc_add_user_role_associado() {
       add_role('associado', __('Associado', 'associados-minde'), get_role('subscriber')->capabilities);
   }
 }
-register_activation_hook(__FILE__, 'csc_add_user_role_associado');
+//register_activation_hook(__FILE__, 'csc_add_user_role_associado');
 
 // Transformar Associado em assinantes ao desativar o plugin
 function csc_remove_user_role_associado() {
@@ -18,4 +18,4 @@ function csc_remove_user_role_associado() {
   }
   remove_role('associado');
 }
-register_deactivation_hook(__FILE__, 'csc_remove_user_role_associado');
+//register_deactivation_hook(__FILE__, 'csc_remove_user_role_associado');
