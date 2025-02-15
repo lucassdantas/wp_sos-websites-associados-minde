@@ -41,4 +41,4 @@ function csc_aviso_shortcode() {
 
   return $output;
 }
-add_shortcode('aviso_cliente_sete', 'csc_aviso_shortcode');
+add_shortcode('aviso_cliente_minde', 'csc_aviso_shortcode');

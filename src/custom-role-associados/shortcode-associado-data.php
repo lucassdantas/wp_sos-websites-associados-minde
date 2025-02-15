@@ -8,14 +8,14 @@ function csc_shortcode_pasta_associado($atts) {
   if (!$user_id || !current_user_can('associado')) {
       return '';
   }
-  $url = get_user_meta($user_id, 'url_sharepoint', true);
+  $url = get_user_meta($user_id, 'url_specific_folder', true);
   if (!$url) {
       return '';
   }
   $image_url = plugins_url('assets/pasta-do-associado.png', __FILE__);
   return "<a href='" . esc_url($url) . "' target='_blank'><img src='" . esc_url($image_url) . "' alt='Pasta do Associado' /></a>";
 }
-add_shortcode('url_pasta_associado_sete', 'csc_shortcode_pasta_associado');
+add_shortcode('url_pasta_especifica_minde', 'csc_shortcode_pasta_associado');
 
 // Shortcode para exibir Nome do Associado
 function csc_shortcode_nome_associado() {

@@ -10,7 +10,7 @@ function csc_send_aviso_email($client, $title) {
   $client_url = home_url('/associado'); // Substitua pelo link correto da área restrita do cliente
 
   $message = sprintf(
-      __("Olá %s,\n\nUm novo aviso foi publicado na sua Área Restrita.\n\nAcesse o site para mais detalhes: %s\n\nAtenciosamente,\nSete Confiança", 
+      __("Olá %s,\n\nUm novo aviso foi publicado na sua Área Restrita.\n\nAcesse o site para mais detalhes: %s\n\nAtenciosamente,\nMinde", 
       'associados-minde'),
       $client_name,
       $client_url

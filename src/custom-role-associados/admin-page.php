@@ -61,7 +61,7 @@ function csc_render_associados_page() {
       $cidade = get_user_meta($associado->ID, 'cidade', true);
       $estado = get_user_meta($associado->ID, 'estado', true);
       $usina = get_user_meta($associado->ID, 'usina', true);
-      $url = get_user_meta($associado->ID, 'url_sharepoint', true);
+      $url = get_user_meta($associado->ID, 'url_specific_folder', true);
       $ultimo_acesso = get_user_meta($associado->ID, 'last_login', true);
       $edit_link = admin_url('user-edit.php?user_id=' . $associado->ID);
 
