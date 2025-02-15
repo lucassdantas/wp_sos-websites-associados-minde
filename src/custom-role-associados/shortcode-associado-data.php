@@ -28,19 +28,19 @@ function csc_shortcode_nome_associado() {
 }
 add_shortcode('nome_associado_minde', 'csc_shortcode_nome_associado');
 
-// Shortcode para exibir Nome da Instituição
-function csc_shortcode_nome_instituicao() {
+// Shortcode para exibir Nome da Usina
+function csc_shortcode_nome_usina() {
   $user_id = get_current_user_id();
   if (!$user_id || !current_user_can('associado')) {
       return '';
   }
-  $instituicao = get_user_meta($user_id, 'instituicao', true);
-  return esc_html($instituicao);
+  $usina = get_user_meta($user_id, 'usina', true);
+  return esc_html($usina);
 }
-add_shortcode('nome_instituicao_minde', 'csc_shortcode_nome_instituicao');
+add_shortcode('nome_usina_minde', 'csc_shortcode_nome_usina');
 
-// Função global para obter o nome da instituição do Associado logado
-function csc_get_instituicao_associado_logado() {
+// Função global para obter o nome da Usina do Associado logado
+function csc_get_usina_associado_logado() {
   // Verifica se há um usuário logado
   $user_id = get_current_user_id();
   if (!$user_id) {
@@ -52,9 +52,9 @@ function csc_get_instituicao_associado_logado() {
       return null; // Retorna null se o usuário não for um Associado
   }
 
-  // Busca o valor do metafield 'instituicao'
-  $instituicao = get_user_meta($user_id, 'instituicao', true);
+  // Busca o valor do metafield 'usina'
+  $usina = get_user_meta($user_id, 'usina', true);
 
   // Retorna o valor sanitizado ou null se estiver vazio
-  return $instituicao ? esc_html($instituicao) : null;
+  return $usina ? esc_html($usina) : null;
 }

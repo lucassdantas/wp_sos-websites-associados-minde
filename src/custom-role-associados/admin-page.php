@@ -10,7 +10,7 @@ function csc_add_associados_admin_page() {
       'list_users',
       'associados-list',
       'csc_render_associados_page',
-      'dashicons-groups',
+      'dashicons-businessman',
       50
   );
 }
@@ -31,7 +31,7 @@ function csc_render_associados_page() {
   echo "<option value=''>Filtrar por</option>";
   echo "<option value='nome' " . selected($filter_by, 'nome', false) . ">Nome</option>";
   echo "<option value='cidade' " . selected($filter_by, 'cidade', false) . ">Cidade</option>";
-  echo "<option value='instituicao' " . selected($filter_by, 'instituicao', false) . ">Instituição</option>";
+  echo "<option value='usina' " . selected($filter_by, 'usina', false) . ">Usina</option>";
   echo "</select>";
   echo "<button type='submit' class='button'>Filtrar</button></form>";
 
@@ -55,17 +55,17 @@ function csc_render_associados_page() {
   $associados = get_users($args);
 
   echo "<table class='wp-list-table widefat fixed striped users'><thead><tr>";
-  echo "<th>Nome do Associado</th><th>Email</th><th>Cidade</th><th>Instituição</th><th>Pasta do Associado</th><th>Último Acesso</th></tr></thead><tbody>";
+  echo "<th>Nome do Associado</th><th>Email</th><th>Cidade</th><th>Usina</th><th>Pasta do Associado</th><th>Último Acesso</th></tr></thead><tbody>";
 
   foreach ($associados as $associado) {
       $cidade = get_user_meta($associado->ID, 'cidade', true);
       $estado = get_user_meta($associado->ID, 'estado', true);
-      $instituicao = get_user_meta($associado->ID, 'instituicao', true);
+      $usina = get_user_meta($associado->ID, 'usina', true);
       $url = get_user_meta($associado->ID, 'url_sharepoint', true);
       $ultimo_acesso = get_user_meta($associado->ID, 'last_login', true);
       $edit_link = admin_url('user-edit.php?user_id=' . $associado->ID);
 
-      echo "<tr><td><a href='{$edit_link}'>{$associado->display_name}</a></td><td>{$associado->user_email}</td><td>{$cidade} - {$estado}</td><td>{$instituicao}</td><td><a href='{$url}' target='_blank'>Abrir Pasta</a></td><td>{$ultimo_acesso}</td></tr>";
+      echo "<tr><td><a href='{$edit_link}'>{$associado->display_name}</a></td><td>{$associado->user_email}</td><td>{$cidade} - {$estado}</td><td>{$usina}</td><td><a href='{$url}' target='_blank'>Abrir Pasta</a></td><td>{$ultimo_acesso}</td></tr>";
   }
 
   echo "</tbody></table></div>";

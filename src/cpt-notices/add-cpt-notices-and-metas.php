@@ -12,7 +12,8 @@ function csc_register_aviso_cpt() {
       'labels' => [
           'name' => __('Avisos', 'associados-minde'),
           'singular_name' => __('Aviso', 'associados-minde')
-      ]
+      ],
+      'menu_icon' => 'dashicons-megaphone'
   ]);
 }
 add_action('init', 'csc_register_aviso_cpt');
