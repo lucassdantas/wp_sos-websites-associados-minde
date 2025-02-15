@@ -27,6 +27,7 @@ require_once plugin_dir_path(__FILE__) . 'src/custom-role-associados/shortcode-a
 require_once plugin_dir_path(__FILE__) . 'src/custom-role-associados/restrict-posts-visualization.php';
 require_once plugin_dir_path(__FILE__) . 'src/custom-role-associados/admin-page.php';
 require_once plugin_dir_path(__FILE__) . 'src/custom-role-associados/register-last-access-and-remove-toolbar.php';
+require_once plugin_dir_path(__FILE__) . 'src/custom-role-associados/restric-associado-page.php';
 require_once plugin_dir_path(__FILE__) . 'src/cpt-notices/add-cpt-notices-and-metas.php';
 require_once plugin_dir_path(__FILE__) . 'src/emails-for-notices/send-emails-for-new-posts.php';
 require_once plugin_dir_path(__FILE__) . 'src/cpt-notices/shortcode-to-show-notices.php';
