@@ -19,23 +19,22 @@ function csc_register_cpt_associados() {
         'not_found'          => __('Nenhum post encontrado'),
         'not_found_in_trash' => __('Nenhum post encontrado na lixeira')
     ];
-
     $args = [
-        'labels'             => $labels,
-        'public'             => true, // Impede acesso público direto
-        'publicly_queryable' => true, // Permite que usuários logados consultem
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => ['slug' => 'posts-associados'],
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => true,
-        'menu_position'      => 5,
-        'menu_icon'          => 'dashicons-groups', // Ícone no menu do WP
-        'supports'           => ['title', 'editor', 'author', 'thumbnail', 'excerpt'],
-        'exclude_from_search' => true,
-        'show_in_nav_menus' => false,
+      'labels'             => $labels,
+      'public'             => true, 
+      'publicly_queryable' => true, // Agora o single post pode ser acessado
+      'show_ui'            => true,
+      'show_in_menu'       => true,
+      'query_var'          => true,
+      'rewrite'            => ['slug' => 'posts-associados'],
+      'capability_type'    => 'post',
+      'has_archive'        => true,
+      'hierarchical'       => false, // Recomendo false para posts normais
+      'menu_position'      => 5,
+      'menu_icon'          => 'dashicons-groups',
+      'supports'           => ['title', 'editor', 'author', 'thumbnail', 'excerpt'],
+      'exclude_from_search' => false,
+      'show_in_nav_menus' => false,
     ];
 
     register_post_type('posts_associados', $args);

@@ -12,8 +12,9 @@ function csc_shortcode_pasta_associado($atts) {
   if (!$url) {
       return '';
   }
-  $image_url = plugins_url('assets/pasta-do-associado.png', __FILE__);
-  return "<a href='" . esc_url($url) . "' target='_blank'><img src='" . esc_url($image_url) . "' alt='Pasta do Associado' /></a>";
+  //$image_url = plugins_url('assets/pasta-do-associado.png', __FILE__);
+  //return "<a href='" . esc_url($url) . "' target='_blank'><img src='" . esc_url($image_url) . "' alt='Pasta do Associado' /></a>";
+  return  esc_url($url);
 }
 add_shortcode('url_pasta_especifica_minde', 'csc_shortcode_pasta_associado');
 

@@ -23,6 +23,7 @@ require_once plugin_dir_path(__FILE__) . 'src/cpt-notices/shortcode-to-show-noti
 
 require_once plugin_dir_path(__FILE__) . 'src/cpt-associated/add-cpt-associated-and-metas.php';
 require_once plugin_dir_path(__FILE__) . 'src/cpt-associated/restrict.cpt-access.php';
+require_once plugin_dir_path(__FILE__) . 'src/cpt-associated/shortcode-to-show-cpt-associated.php';
 
 require_once plugin_dir_path(__FILE__) . 'src/emails-for-notices/send-emails-for-new-posts.php';
 
