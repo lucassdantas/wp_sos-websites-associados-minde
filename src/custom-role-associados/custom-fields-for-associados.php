@@ -4,8 +4,6 @@ defined('ABSPATH') or die();
 // Adicionar campos personalizados na edição de usuário
 function csc_add_custom_user_fields($user) {
     $fields = [
-        'cidade' => __('Cidade', 'Associado-minde'),
-        'estado' => __('Estado (UF)', 'Associado-minde'),
         'usina' => __('Usina', 'Associado-minde'),
         'url_specific_folder' => __('Link para pasta específica', 'Associado-minde')
     ];
@@ -25,7 +23,7 @@ add_action('edit_user_profile', 'csc_add_custom_user_fields');
 function csc_save_custom_user_fields($user_id) {
   if (!current_user_can('edit_user', $user_id)) {return false;}
   
-  $fields = ['cidade', 'estado', 'usina', 'url_specific_folder'];
+  $fields = ['usina', 'url_specific_folder'];
   foreach ($fields as $field) {
       if (isset($_POST[$field])) {
           update_user_meta($user_id, $field, sanitize_text_field($_POST[$field]));
