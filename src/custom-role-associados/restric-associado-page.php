@@ -12,5 +12,5 @@ function restringir_acesso_associado() {
       exit;
   }
 }
-add_action('template_redirect', 'restringir_acesso_associado');
+//add_action('template_redirect', 'restringir_acesso_associado');
 

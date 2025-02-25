@@ -30,7 +30,6 @@ require_once plugin_dir_path(__FILE__) . 'src/emails-for-notices/send-emails-for
 require_once plugin_dir_path(__FILE__) . 'src/reset-password-form/reset-password-shortcode.php';
 
 
-
 register_activation_hook(__FILE__, 'csc_on_plugin_activation');
 function csc_on_plugin_activation() {
     csc_add_user_role_associado(); //this function is on add-associados-role.php
